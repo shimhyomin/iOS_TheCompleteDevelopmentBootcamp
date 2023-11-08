@@ -36,7 +36,7 @@ struct Story {
     }
     
     func checkStoryEnd() -> Bool {
-        if choice1 == "The" && choice2 == "End" {
+        if choice1Destination == 0 && choice2Destination == 0 {
             return true
         } else {
             return false

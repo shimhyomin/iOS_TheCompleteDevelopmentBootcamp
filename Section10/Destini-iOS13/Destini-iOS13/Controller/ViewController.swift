@@ -23,9 +23,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        storyNumber = storyBrain[storyNumber].nextStory(choice: sender.currentTitle)
-        
-        updateUI()
+        if !storyBrain[storyNumber].checkStoryEnd() {
+            storyNumber = storyBrain[storyNumber].nextStory(choice: sender.currentTitle)
+            updateUI()
+        }
     }
     
     func updateUI() {
